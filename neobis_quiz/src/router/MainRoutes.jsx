@@ -1,0 +1,47 @@
+import React from "react";
+import { Routes, Route } from "react-router";
+import MainPage from "../pages/MainPage/MainPage";
+import ArticlesPage from "../pages/ArticlesPage/ArticlesPage";
+import QuizPage from "../pages/QuizPage/QuizPage";
+import ReadingPage from "../pages/ReadingPage/ReadingPage";
+import QuizSliderPage from "../pages/QuizSliderPage/QuizSliderPage";
+
+const MainRoutes = () => {
+  const BASE_ROTES_COLLECTION = [
+    {
+      link: "/",
+      element: <MainPage />,
+      id: 1,
+    },
+    {
+      link: "/articles",
+      element: <ArticlesPage />,
+      id: 2,
+    },
+    {
+      link: "/quiz",
+      element: <QuizPage />,
+      id: 3,
+    },
+    {
+      link: "/reading/:id",
+      element: <ReadingPage />,
+      id: 4,
+    },
+    {
+      link: "/quizslider",
+      element: <QuizSliderPage />,
+      id: 5,
+    },
+  ];
+
+  return (
+    <Routes>
+      {BASE_ROTES_COLLECTION.map((elem) => {
+        return <Route path={elem.link} element={elem.element} key={elem} />;
+      })}
+    </Routes>
+  );
+};
+
+export default MainRoutes;

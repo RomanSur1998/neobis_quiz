@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.container div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.container form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid black;
+  height: 45px;
+  width: 270px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+}
+.container input {
+  outline: none;
+  border: none;
+  height: 40px;
+  width: 230px;
+}

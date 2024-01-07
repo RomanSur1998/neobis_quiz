@@ -1,10 +1,16 @@
 import React from "react";
 import MainLayout from "../../layouts/MainLayout";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 const ReadingPage = () => {
   return (
     <MainLayout>
       <div>
+        <SearchBar
+          navigateLink={"/articles"}
+          isShowSearch={false}
+          isShowTitle={true}
+        />
         <p>
           Наполеон I Бонапарт - французский полководец и государственный
           деятель. Император Франции (1804-1814 и в марте - июне 1815). В 1799

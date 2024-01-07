@@ -20,7 +20,7 @@ const MainPage = () => {
         />
         <section>
           <Swiper
-            slidesPerView={4.2}
+            slidesPerView={3.5}
             spaceBetween={16}
             grabCursor={true}
             modules={[Pagination]}
@@ -45,7 +45,6 @@ const MainPage = () => {
               <ArticlesCard />
             </SwiperSlide>
           </Swiper>
-          {/* <ArticlesCard /> */}
         </section>
         <NavigationPanel navigateBlockName={"Квизы"} navigateLink={"/quiz"} />
         <section className={styles.quizContainer}>

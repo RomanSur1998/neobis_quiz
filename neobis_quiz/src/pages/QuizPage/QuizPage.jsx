@@ -27,18 +27,18 @@ const QuizPage = () => {
 
   return (
     <MainLayout>
-      <section>
-        <SearchBar navigateLink={"/"} isShowSearch={false} />
-        <div className={styles.containerWrap}>
-          <Carousel
-            slides={cards}
-            goToSlide={goToSlide}
-            offsetRadius={2}
-            showNavigation={false}
-            animationConfig={config.gentle}
-          />
-        </div>
-      </section>
+      {/* <section> */}
+      <SearchBar navigateLink={"/"} isShowSearch={false} />
+      <div style={{ width: 700, height: "80vh", margin: "0 auto" }}>
+        <Carousel
+          slides={cards}
+          goToSlide={goToSlide}
+          offsetRadius={2}
+          showNavigation={false}
+          animationConfig={config.gentle}
+        />
+      </div>
+      {/* </section> */}
     </MainLayout>
   );
 };

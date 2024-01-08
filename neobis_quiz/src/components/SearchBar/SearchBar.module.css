@@ -29,3 +29,9 @@
   height: 40px;
   width: 260px;
 }
+.filteButton {
+  cursor: pointer;
+}
+.navigateArrow {
+  cursor: pointer;
+}

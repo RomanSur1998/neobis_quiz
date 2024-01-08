@@ -16,6 +16,7 @@ const NavigationPanel = ({ navigateBlockName, navigateLink }) => {
         onClick={() => {
           navigate(navigateLink);
         }}
+        className={styles.navigationArrow}
       />
     </div>
   );

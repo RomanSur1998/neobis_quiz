@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import arrow from "../../assets/icons/arrow_left.svg";
 import filter from "../../assets/icons/filter_button.svg";
 import search from "../../assets/icons/search_icon.svg";
@@ -7,6 +7,10 @@ import { useNavigate } from "react-router";
 import ModalFilter from "../ModalFilter/ModalFilter";
 
 const SearchBar = ({ navigateLink, isShowSearch, isShowTitle }) => {
+  const [isShowModalFilter, setIsShowModalFilter] = useState(false);
+  function hadleIsShowModalFilter() {
+    setIsShowModalFilter(!isShowModalFilter);
+  }
   const navigate = useNavigate();
   return (
     <>
@@ -18,6 +22,7 @@ const SearchBar = ({ navigateLink, isShowSearch, isShowTitle }) => {
             onClick={() => {
               navigate(navigateLink);
             }}
+            className={styles.navigateArrow}
           />
           {!isShowTitle ? <span>Все статьи</span> : null}
         </div>
@@ -34,12 +39,17 @@ const SearchBar = ({ navigateLink, isShowSearch, isShowTitle }) => {
                 className={styles.formInput}
               />
             </form>
-            <img src={filter} alt="" />
+            <img
+              src={filter}
+              alt="filter modal"
+              onClick={hadleIsShowModalFilter}
+              className={styles.filteButton}
+            />
           </div>
         ) : (
           <div> </div>
         )}
-        <ModalFilter />
+        {isShowModalFilter ? <ModalFilter /> : null}
       </div>
     </>
   );

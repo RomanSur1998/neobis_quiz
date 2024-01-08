@@ -1,6 +1,7 @@
 import React from "react";
 import example from "../../assets/pictures/arist.svg";
 import styles from "./ArticlesPreviewCard.module.css";
+import { articleImage } from "../../helpers/getArcticleImage";
 
 const ArticlesPreviewCard = () => {
   return (
@@ -14,7 +15,8 @@ const ArticlesPreviewCard = () => {
         </div>
       </div>
       <div>
-        <img src={example} alt="" />
+        {/* <img src={example} alt="" /> */}
+        <img src={articleImage["Философия"]} alt="" />
       </div>
     </div>
   );

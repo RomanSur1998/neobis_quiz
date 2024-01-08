@@ -5,26 +5,27 @@
   height: 45px;
   margin-bottom: 40px;
   flex-wrap: wrap;
+  position: relative;
 }
-.container div {
+.containerSection {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.container form {
+.containerForm {
   display: flex;
   align-items: center;
   gap: 10px;
   border: 2px solid black;
   height: 45px;
-  width: 270px;
+  width: 300px;
   background-color: white;
   border-radius: 8px;
   padding: 10px;
 }
-.container input {
+.formInput {
   outline: none;
   border: none;
   height: 40px;
-  width: 230px;
+  width: 260px;
 }

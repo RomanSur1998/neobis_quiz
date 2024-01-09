@@ -1,6 +1,6 @@
 .container {
   background-color: aquamarine;
-  width: 460px;
+  width: 520px;
   height: 160px;
   border-radius: 8px;
   border: 2px solid black;
@@ -12,4 +12,5 @@
   margin: 10px;
   display: flex;
   flex-direction: column;
+  gap: 40px;
 }

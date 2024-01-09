@@ -4,7 +4,9 @@ import MainPage from "../pages/MainPage/MainPage";
 import ArticlesPage from "../pages/ArticlesPage/ArticlesPage";
 import QuizPage from "../pages/QuizPage/QuizPage";
 import ReadingPage from "../pages/ReadingPage/ReadingPage";
-import QuizSliderPage from "../pages/QuizSliderPage/QuizSliderPage";
+import QuizPreviewPage from "../pages/QuizPreviewPage/QuizPreviewPage";
+import AnswersPage from "../pages/AnswersPage/AnswersPage";
+// import QuizSliderPage from "../pages/QuizSliderPage/QuizSliderPage";
 
 const MainRoutes = () => {
   const BASE_ROTES_COLLECTION = [
@@ -29,9 +31,14 @@ const MainRoutes = () => {
       id: 4,
     },
     {
-      link: "/quizslider",
-      element: <QuizSliderPage />,
+      link: "/quizsPreview",
+      element: <QuizPreviewPage />,
       id: 5,
+    },
+    {
+      link: "/answers",
+      element: <AnswersPage />,
+      id: 6,
     },
   ];
 

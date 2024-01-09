@@ -5,18 +5,19 @@ import QuizCard from "../../components/QuizCard/QuizCard";
 import Carousel from "react-spring-3d-carousel";
 import { config } from "react-spring";
 import styles from "./QuizPage.module.css";
+import QuizPreview from "../../components/QuizPreview/QuizPreview";
 
 const QuizPage = () => {
   const slides = [
-    { key: 4, content: <QuizCard /> },
-    { key: 3, content: <QuizCard /> },
+    { key: 4, content: <QuizPreview /> },
+    { key: 3, content: <QuizPreview /> },
     {
       key: 2,
-      content: <QuizCard />,
+      content: <QuizPreview />,
     },
     {
       key: 1,
-      content: <QuizCard />,
+      content: <QuizPreview />,
     },
   ];
   const table = slides.map((element, index) => {
@@ -29,7 +30,7 @@ const QuizPage = () => {
     <MainLayout>
       {/* <section> */}
       <SearchBar navigateLink={"/"} isShowSearch={false} />
-      <div style={{ width: 700, height: "80vh", margin: "0 auto" }}>
+      <div style={{ width: 900, height: "80vh", margin: "0 auto" }}>
         <Carousel
           slides={cards}
           goToSlide={goToSlide}

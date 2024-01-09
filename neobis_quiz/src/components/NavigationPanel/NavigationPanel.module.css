@@ -4,6 +4,8 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 16px;
+  background-image: url("../../assets/icons/fon.svg");
+  background-repeat: no-repeat;
 }
 .navigateName {
   color: #000;

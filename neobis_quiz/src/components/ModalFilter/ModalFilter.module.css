@@ -15,6 +15,17 @@
   justify-content: space-between;
   align-items: center;
 }
+.headerTitle {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+}
+.headerCancel {
+  color: #939393;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration-line: underline;
+}
 .form {
   display: flex;
   flex-direction: column;

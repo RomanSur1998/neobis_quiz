@@ -7,7 +7,7 @@ const initialState = {
   filter: null,
 };
 
-export const articlesSile = createSlice({
+export const articlesSlice = createSlice({
   name: "articles",
   initialState,
   reducers: {
@@ -23,5 +23,5 @@ export const articlesSile = createSlice({
   },
 });
 
-export const { setPage, setQuery, setFilter } = articlesSile.actions;
-export default articlesSile.reducer;
+export const { setPage, setQuery, setFilter } = articlesSlice.actions;
+export default articlesSlice.reducer;

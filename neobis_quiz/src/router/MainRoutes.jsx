@@ -37,7 +37,7 @@ const MainRoutes = () => {
       id: 5,
     },
     {
-      link: "/answers ",
+      link: "/answers",
       element: <AnswersPage />,
       id: 6,
     },

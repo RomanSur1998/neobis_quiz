@@ -5,11 +5,15 @@ import search from "../../assets/icons/search_icon.svg";
 import styles from "./SearchBar.module.css";
 import { useNavigate } from "react-router";
 import ModalFilter from "../ModalFilter/ModalFilter";
+import { useDispatch, useSelector } from "react-redux";
+import { setShowFilter } from "../../redux/slices/ArticlesSlice";
 
 const SearchBar = ({ navigateLink, isShowSearch, isShowTitle }) => {
-  const [isShowModalFilter, setIsShowModalFilter] = useState(false);
+  const { isShowsFilter } = useSelector((state) => state.articles);
+  const dispatch = useDispatch();
+
   function hadleIsShowModalFilter() {
-    setIsShowModalFilter(!isShowModalFilter);
+    dispatch(setShowFilter(!isShowsFilter));
   }
   const navigate = useNavigate();
   return (
@@ -49,7 +53,7 @@ const SearchBar = ({ navigateLink, isShowSearch, isShowTitle }) => {
         ) : (
           <div> </div>
         )}
-        {isShowModalFilter ? <ModalFilter /> : null}
+        {isShowsFilter ? <ModalFilter /> : null}
       </div>
     </>
   );

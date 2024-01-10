@@ -5,6 +5,7 @@ const initialState = {
   page: 1,
   query: "",
   filter: null,
+  isShowsFilter: false,
 };
 
 export const articlesSlice = createSlice({
@@ -14,14 +15,19 @@ export const articlesSlice = createSlice({
     setPage(state, action) {
       state.page = action.payload;
     },
-  },
-  setQuery(state, action) {
-    state.query = action.payload;
-  },
-  setFilter(state, action) {
-    state.filter = action.payload;
+    setQuery(state, action) {
+      state.query = action.payload;
+    },
+    setFilter(state, action) {
+      console.log(action.payload, "action filter");
+      state.filter = action.payload;
+    },
+    setShowFilter(state, action) {
+      state.isShowsFilter = action.payload;
+    },
   },
 });
 
-export const { setPage, setQuery, setFilter } = articlesSlice.actions;
+export const { setPage, setQuery, setFilter, setShowFilter } =
+  articlesSlice.actions;
 export default articlesSlice.reducer;

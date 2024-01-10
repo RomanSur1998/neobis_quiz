@@ -1,10 +1,17 @@
 import React from "react";
 import example from "../../assets/pictures/guiz_card_example.svg";
 import styles from "./QuizCard.module.css";
+import { useNavigate } from "react-router";
 
 const QuizCard = () => {
+  const navigate = useNavigate();
   return (
-    <div className={styles.cardContainer}>
+    <div
+      className={styles.cardContainer}
+      onClick={() => {
+        navigate("/quiz");
+      }}
+    >
       <div className={styles.cardContent}>
         <img src={example} alt="card icon" />
         <h3>История</h3>

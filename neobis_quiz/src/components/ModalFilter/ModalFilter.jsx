@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import styles from "./ModalFilter.module.css";
+import React, { useEffect, useState } from "react";
 import { checkboxName } from "../../helpers/checkboxName";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { setFilter } from "../../redux/slices/ArticlesSlice";
+import { setFilter, setShowFilter } from "../../redux/slices/ArticlesSlice";
+import * as yup from "yup";
+import styles from "./ModalFilter.module.css";
 
 const ModalFilter = () => {
-  const { filter } = useSelector((state) => state.articles);
+  const { filter, isShowsFilter } = useSelector((state) => state.articles);
   const dispatch = useDispatch();
-  const [newFilter, setNewFilter] = useState(null);
-  console.log(newFilter, "newFilter");
 
-  function handleSetFilter() {
-    dispatch(setFilter(newFilter));
-  }
   const formik = useFormik({
     initialValues: {
       input: null,
     },
     onSubmit: (values) => {
-      // console.log(values.input, "values");
+      console.log(values.input, "values");
       dispatch(setFilter(values.input));
+      dispatch(setShowFilter(!isShowsFilter));
     },
+    validationSchema: yup.object({
+      input: yup.string().required(),
+    }),
   });
 
   console.log(filter, "filter");
@@ -30,35 +30,31 @@ const ModalFilter = () => {
     <div className={styles.modalContainer}>
       <div className={styles.header}>
         <span className={styles.headerTitle}>Фильтр</span>
-        <span className={styles.headerCancel}>Cбросить все</span>
+        <span className={styles.headerCancel} onClick={formik.handleReset}>
+          Cбросить все
+        </span>
       </div>
 
-      <form
-        className={styles.form}
-        // onSubmit={() => {
-        //   handleSetFilter;
+      <form className={styles.form} onSubmit={formik.handleSubmit}>
+        {checkboxName.map((elem) => (
+          <label className={styles.label} key={elem.id}>
+            <input
+              type="radio"
+              className={styles.input}
+              name="input"
+              onChange={formik.handleChange}
+              checked={formik.values.input === elem.title}
+              value={elem.title}
+            />
+            <span>{elem.title}</span>
+          </label>
+        ))}
 
-        // }}
-        onSubmit={formik.handleSubmit}
-      >
-        {checkboxName.map((elem) => {
-          return (
-            <label className={styles.label} key={elem.id}>
-              <input
-                type="checkbox"
-                className={styles.input}
-                name="input"
-                onChange={formik.handleChange}
-                // onChange={(e) => setNewFilter(e.target.value)}
-                value={elem.title}
-              />
-              <span>{elem.title}</span>
-            </label>
-          );
-        })}
-
-        <button className={styles.formButton} type="submit">
-          Применить{" "}
+        <button
+          className={formik.dirty ? styles.formButtonBlack : styles.formButton}
+          type="submit"
+        >
+          Применить
         </button>
       </form>
     </div>

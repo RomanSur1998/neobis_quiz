@@ -1,11 +1,15 @@
 import React from "react";
 import styles from "./Button.module.css";
+import { useNavigate } from "react-router";
 
-const Buttton = ({ text, isAnswers, navigate }) => {
+const Buttton = ({ text, isAnswers, navigateName, isWrong, isRight }) => {
+  const navigate = useNavigate();
   return (
     <div
       onClick={() => {
-        navigate("/quizsPreview");
+        {
+          navigateName ? navigate(navigateName) : null;
+        }
       }}
     >
       <button className={isAnswers ? styles.button : styles.buttonAnswer}>

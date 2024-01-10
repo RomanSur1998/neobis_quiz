@@ -13,7 +13,11 @@ const QuizPreview = ({ colorNum }) => {
         <h2 className={styles.title}>История</h2>
         <span className={styles.questionNum}>10 вопросов</span>
       </div>
-      <Buttton text={"Начать квиз"} isAnswers={true} navigate={navigate} />
+      <Buttton
+        text={"Начать квиз"}
+        isAnswers={true}
+        navigateName={"/quizsPreview"}
+      />
     </div>
   );
 };

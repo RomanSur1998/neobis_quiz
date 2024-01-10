@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainLayout from "../../layouts/MainLayout";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import styles from "./ReadingPage.module.css";

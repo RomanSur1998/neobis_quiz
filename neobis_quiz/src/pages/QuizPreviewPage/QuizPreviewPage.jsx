@@ -19,7 +19,11 @@ const QuizPreviewPage = () => {
           личностей и ключевые моменты, которые оказали огромное влияние на
           развитие человечества.
         </p>
-        <Buttton text={"Начать квиз"} isAnswers={true} />
+        <Buttton
+          text={"Начать квиз"}
+          isAnswers={true}
+          navigateName={"/answers"}
+        />
       </div>
     </MainLayout>
   );

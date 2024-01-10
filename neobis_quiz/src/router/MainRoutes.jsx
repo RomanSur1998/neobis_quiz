@@ -6,6 +6,7 @@ import QuizPage from "../pages/QuizPage/QuizPage";
 import ReadingPage from "../pages/ReadingPage/ReadingPage";
 import QuizPreviewPage from "../pages/QuizPreviewPage/QuizPreviewPage";
 import AnswersPage from "../pages/AnswersPage/AnswersPage";
+import FinishQuizPage from "../pages/FinishQuizPage/FinishQuizPage";
 // import QuizSliderPage from "../pages/QuizSliderPage/QuizSliderPage";
 
 const MainRoutes = () => {
@@ -36,9 +37,14 @@ const MainRoutes = () => {
       id: 5,
     },
     {
-      link: "/answers",
+      link: "/answers ",
       element: <AnswersPage />,
       id: 6,
+    },
+    {
+      link: "/finish",
+      element: <FinishQuizPage />,
+      id: 7,
     },
   ];
 

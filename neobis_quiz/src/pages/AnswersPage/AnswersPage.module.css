@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 48px;
+  /* gap: 48px; */
 }
 .tittle {
   width: 600px;
@@ -11,9 +11,14 @@
   font-size: 32px;
   font-weight: 700;
   line-height: 150%;
+  margin-top: 32px;
 }
 .answerBlock {
   display: flex;
   flex-direction: column;
   gap: 34px;
+  margin-top: 48px;
+}
+.statusBar {
+  width: 900px;
 }

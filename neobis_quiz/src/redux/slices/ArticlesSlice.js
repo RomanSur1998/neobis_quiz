@@ -19,7 +19,7 @@ export const articlesSlice = createSlice({
       state.query = action.payload;
     },
     setFilter(state, action) {
-      console.log(action.payload, "action filter");
+      console.log(action.payload, 'action filter');
       state.filter = action.payload;
     },
     setShowFilter(state, action) {
